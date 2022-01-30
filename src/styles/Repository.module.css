@@ -1,0 +1,55 @@
+
+
+.container {
+    background: red;
+    padding: 30px 20px;
+    position: relative;
+    width: 300px;
+    background: var(--first-bg);
+    box-shadow: 2px 2px 5px rgb(80, 80, 80);
+}
+
+
+.container h1 {
+    font-size: 23px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: "...";
+    white-space: nowrap;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid rgb(156, 155, 155);
+    border-bottom: 1px solid rgb(156, 155, 155);
+}
+
+.close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background:var(--second-bg);
+    box-shadow: inset 1px 1px 1px rgb(59, 59, 59);
+    border-radius: 40%;
+    cursor: pointer;
+}
+
+.close::before, .close::after{
+    content: '';
+    width: 70%;
+    height: 4px;
+    background: rgb(255, 1, 1);
+    position: absolute;
+    top: 50%;
+    border-radius: 2px;
+    left: 50%;
+}
+
+.close::before{
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close::after{
+    transform: translate(-50%, -50%) rotate(325deg);
+}
+
