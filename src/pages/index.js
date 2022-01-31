@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Repositories</title>
+        <title>New repository</title>
       </Head>
         {error && <span>{error}</span> }
         {success && <p>Successfully added</p> }

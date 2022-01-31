@@ -5,6 +5,7 @@ import { CardRepository } from '../components/CardRepository'
 import styles from '../styles/Repositories.module.css'
 
 import { useRouter } from 'next/router'
+import Head  from 'next/head'
 
 
 export default function Repos({repositories}){
@@ -36,6 +37,7 @@ export default function Repos({repositories}){
 
     return (
         <div className={styles.container}>
+            <Head><title>Repositories</title></Head>
             <div className={styles.back} onClick={() => router.push('/')}></div>
             {repos.length < 1 && <span className={styles.no__content}>No repositories added</span>}
             {repos.map((repository ,index) => (

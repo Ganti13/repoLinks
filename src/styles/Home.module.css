@@ -42,6 +42,7 @@
     align-items: center;
     flex-direction: column;
     padding: 10px;
+    width: 300px;
     background: var(--second-bg);
     box-shadow: 2px 2px 5px rgb(119, 119, 119);
     gap: 10px;
@@ -50,6 +51,7 @@
 .container form input {
     border: 0;
     padding: 8px;
+    width: 100%;
 }
 
 .container form input:focus{
