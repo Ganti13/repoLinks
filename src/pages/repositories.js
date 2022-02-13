@@ -16,7 +16,7 @@ export default function Repos({repositories}){
     
     const deleteRepository = (e, id )=> {
         e.target.parentNode.classList.add(styles.deleted)
-        console.log(e.target.parentNode)
+
         setTimeout(() => {
             const newRepositoriesList = repos.filter(repository => repository.id !== id)
             cookies.setItem('repositories',JSON.stringify(newRepositoriesList), { secure: true})
@@ -31,7 +31,7 @@ export default function Repos({repositories}){
     useEffect(() => {
         setRepos(repositories)
         setLoading(false)
-    },[])
+    },[repositories])
 
     if(loading) return <div className={styles.loading}>Loading...</div>
 
@@ -50,10 +50,11 @@ export default function Repos({repositories}){
 }
 
 export const getServerSideProps = ({req}) => {
-    const repositories = req.cookies.repositories || []
+    const repositories = req.cookies.repositories
+    
     return {
         props:{
-            repositories: JSON.parse(repositories)
+            repositories: !!repositories ? JSON.parse(repositories) : []
         }
     }
 }
